@@ -1,0 +1,292 @@
+<!doctype!>
+<html>
+<head>
+    <title> Bestlling av opphold i Bø </title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+    <body>
+        <div class="bakgrunn"> 
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            
+            
+        <div class="innpakning"> 
+            <h1> OVERNATTING I BØ </h1>
+    Navn
+        <input type="text" placeholder="Navn" id="Navn"> 
+    
+   Telefon
+        <input type="number" placeholder="Nummer" id="telefonnummer">
+    Gjester
+        <select name="Antall gjester" id ="gjester">
+            <option value= 1 >1</option>
+            <option value= 2 >2</option>
+            <option value= 3 >3</option>
+            <option value= 4 >4</option>
+            <option value= 5 >5</option>
+            <option value= 6 >6</option>
+      
+        </select>
+        
+  
+  Ekstra aktiviteter:
+       <br>
+    
+        <input type="checkbox" name="format" value="300" id="aktivitet1"> Dagspass til Bø Sommerland <button type="button" id="aktivitet1Knapp"> Bilde </button> <br> 
+            
+        <input type="checkbox" name="format" value="250" id="aktivitet2"> Dagspass til Høyt og Lavt klatrepark <button type="button"  id="aktivitet2Knapp"> Bilde</button> <br> 
+            
+        <input type="checkbox" name="format" value="200" id="aktivitet3"> Omvisning på fruktgård <button type="button"  id="aktivitet3Knapp"> Bilde</button> <br> 
+            
+        <input type="checkbox" name="format" value="800" id="aktivitet4"> Dagstur på Telemarkskanalen <button type="button"  id="aktivitet4Knapp"> Bilde</button> <br> 
+            
+            <br> <br>
+        
+            
+            <div id="bilder">
+           
+            </div>
+            
+            <script>
+            var BilderEl = document.querySelector("#Bilder")
+                
+            var aktivitet1KnappEl = document.querySelector("#aktivitet1Knapp");
+            var aktivitet2KnappEl = document.querySelector("#aktivitet2Knapp");
+            var aktivitet3KnappEl = document.querySelector("#aktivitet3Knapp");
+            var aktivitet4KnappEl = document.querySelector("#aktivitet4Knapp");
+            
+            aktivitet1KnappEl.addEventListener("click", ByttBilde);
+            aktivitet2KnappEl.addEventListener("click", ByttBilde);
+            aktivitet3KnappEl.addEventListener("click", ByttBilde);
+            aktivitet4KnappEl.addEventListener("click", ByttBilde);
+            
+            function ByttBilde(e) {
+            
+               
+                
+                var TrykketAktivitet = e.target;
+                console.log(TrykketAktivitet.id);
+                
+                if (TrykketAktivitet.id === "aktivitet1Knapp") {
+                    console.log("Du trykket på Bø Sommerland.");
+                    
+                    BilderEl.style.backgroundImage = "url('BoSommerland2.jpg')"; 
+                    
+                } if (TrykketAktivitet.id === "aktivitet2Knapp") {
+                    console.log("Du trykket på Høyt og Lavt.");
+                    
+                    BilderEl.style.backgroundImage = "url('HøytOgLavt.jpg')";
+                    
+                } if (TrykketAktivitet.id === "aktivitet3Knapp") {
+                    console.log("Du trykket på Fruktgård.");
+                    
+                    BilderEl.style.backgroundImage = "url('Fruktgaard.jpg')"; } 
+                
+                if (TrykketAktivitet.id === "aktivitet4Knapp") {
+                    console.log("Du trykket på Telemarkskanalen.");
+                    
+                    BilderEl.style.backgroundImage = "url('Telemarkskanalen.jpg')"; 
+                }
+            }
+            </script>
+            
+    <br> <br> <br>
+        Frokost? <br>
+        <input type="radio" name="frokost" value="200" id="frokostJa"> Ja <br>
+        <input type="radio" name="frokost" value="0" id="frokostNei" checked> Nei <br>
+        <br>
+        
+  
+        <button id="registrer"> Registrer</button>
+        
+        <button class="avbryt"> AVBRYT </button>
+        
+                
+        </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <hr>
+        <h1 id ="overskrift">  </h1>
+        
+        <div class = "kontaktinformasjon">
+            
+            <h3 id = "overskriftKontakt"> </h3>
+            
+                <ul id = "kontakt">
+                
+                </ul>
+            </div>
+       
+        <div class="bestilling"> 
+            
+            <h3 id="overskriftPris"> </h3>
+            
+         <ul id="pris"> 
+              
+        </ul>
+          
+            </div>
+        
+    <script>  
+        var navnEl = document.querySelector("#navn");
+        var telefonnummerEl = document.querySelector("#telefonnummer");
+        var gjesterEl = document.querySelector("#gjester");
+        var aktivitet1El = document.querySelector("#aktivitet1");
+        var aktivitet2El =document.querySelector("#aktivitet2");
+        var aktivitet3El = document.querySelector("#aktivitet3");
+        var aktivitet4El = document.querySelector("#aktivitet4");
+        var prisEl = document.querySelector("#pris");
+        var kontaktEl = document.querySelector("#kontakt");
+        var overskriftEl = document.querySelector("#overskrift");
+        var overskriftKontaktEl = document.querySelector("#overskriftKontakt");
+        var overskriftPrisEl = document.querySelector("#overskriftPris");
+        
+        var frokostJaEl = document.querySelector("#frokostJa");
+        var frokostNeiEl = document.querySelector("#frokostNei");
+        var registrerEl = document.querySelector("#registrer");
+        var bestillingEl = document.querySelector(".bestilling");
+        var avbrytEl = document.querySelector(".avbryt");
+        var overnattingEnNatt = 500;
+        var sum = overnattingEnNatt; //Det koster 500 Kr for bare overnatting
+        
+        registrerEl.addEventListener("click", skrivUt); 
+        
+        avbrytEl.addEventListener("click", avbryt);
+        
+    
+        
+        function skrivUt(e){ 
+            
+            
+           overskriftEl.innerHTML = "Din Bestilling";
+            
+           alert("Din bestilling ble lagret! Bla ned for å se din bestilling");
+            
+            console.log("Navn på bestillingsperson: " + navnEl.value);
+            console.log("Kontaktinformasjon: " + telefonnummerEl.value);
+            console.log("Antall personer: " + gjesterEl.value + ".");
+            
+            
+                overskriftKontaktEl.innerHTML = "Kontaktinformasjon:";
+                overskriftPrisEl.innerHTML = "Pris:";
+                
+                var navn = navnEl.value;
+            
+                if (navn != "") { 
+                kontaktEl.innerHTML = "<li> Navn: " + navn + "</li>";
+                } else {
+                    kontaktEl.innerHTML = "<li> ***Legg til et navn i skjemaet*** </li>";
+                }
+            
+                var telefonnummer = telefonnummerEl.value;
+            
+                if (telefonnummer != "") {  
+                   kontaktEl.innerHTML += "<li> Telefonnummer: " + telefonnummer + "</li>";
+                } else {
+                    kontaktEl.innerHTML += "<li> ***Legg til et telefonnummer i skjemaet over***</li>";
+                }
+          
+            prisEl.innerHTML = "<li>Overnatting en natt: " + overnattingEnNatt + " Kr</li>";
+            
+               
+            
+            if (aktivitet1El.checked) {
+                console.log("Dagspass til Bø Sommerland");
+                
+                prisEl.innerHTML += "<li>Dagspass til Bø Sommerland: " + Number(aktivitet1El.value) + " Kr</li>";
+                sum += Number(aktivitet1El.value);
+                
+            } if (aktivitet2El.checked) {
+                console.log("Dagspass til Høyt og Lavt klatrepark");
+                prisEl.innerHTML += " <li>Dagspass til høyt og lavt klatrepark: " + Number(aktivitet2El.value)+ " Kr </li>";
+                sum += Number(aktivitet2El.value);
+                
+            } if (aktivitet3El.checked) {
+                console.log("Omvisning på fruktgård");
+                prisEl.innerHTML += "<li>Omvisning på fruktgård: " + Number(aktivitet3El.value) + " Kr</li>";
+                sum += Number(aktivitet3El.value);
+                
+            } if (aktivitet4El.checked) {
+                console.log("Dagstur på Telemarkskanalen");
+                prisEl.innerHTML += "<li> Dagstur på Telemarkskanalen: " + Number(aktivitet4El.value)+ " Kr </li>";
+                sum += Number(aktivitet4El.value);
+            }
+              if (frokostJaEl.checked) {
+            console.log("De skal ha frokost.");
+            prisEl.innerHTML += "<li> Frokost: " + Number(frokostJaEl.value) + " Kr </li>";
+            sum += Number(frokostJaEl.value);
+        
+        
+        } else if (frokostNeiEl.checked) {
+            console.log("De skal ikke ha frokost.");
+        }  
+            var gjester = Number(gjesterEl.value);
+            
+            prisEl.innerHTML += "<hr>  Å betale:  " + sum + " Kr per person. <hr> Totalt for " + gjester + " personer: " + sum * gjester + " Kr.";
+            
+            sum = 500;
+        
+            
+        }
+        
+        function avbryt() {
+            
+           overskriftEl.innerHTML = " ";
+            
+           alert("Din bestilling ble slettet!");
+            
+           
+            console.log("Din bestilling ble slettet!");
+            
+                navnEl.value= "";
+            
+                telefonnummerEl.value= "";
+               
+                gjesterEl.value = 1;
+            
+                overskriftKontaktEl.innerHTML = " ";
+                overskriftPrisEl.innerHTML = " ";
+            
+               
+                kontaktEl.innerHTML = " ";
+          
+            prisEl.innerHTML = " ";
+            
+            if (aktivitet1El.checked) {
+                aktivitet1El.checked=false;
+                
+            } if (aktivitet2El.checked) {
+                 aktivitet2El.checked=false;
+                
+            } if (aktivitet3El.checked) {
+                aktivitet3El.checked=false;
+                
+            } if (aktivitet4El.checked) {
+               aktivitet4El.checked=false;
+            }
+              if (frokostJaEl.checked) {
+            frokostNeiEl.checked=true;
+           
+        }
+            sum=500;
+        }
+         
+        </script>
+        
+        
+        
+            
+        
+        
+    
+    
+   
+
+    </body>
+</html>

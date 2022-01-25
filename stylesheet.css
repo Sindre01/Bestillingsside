@@ -1,0 +1,97 @@
+body {
+    background-color: white;
+    color: black;
+}
+.bakgrunn {
+    background-image: url("BoSommerland.jpg");
+    background-size: cover;
+}
+h1 {
+    text-align: center;
+    color: green;
+}
+.kontaktinformasjon {
+    position: absolute;
+    margin-left: 100px;
+   
+}
+
+h3 {
+    text-align: center;
+}
+
+.bestilling {
+width: 25%;
+padding: 20px;
+margin-left: 600px;
+position: absolute;
+}
+.innpakning {
+width: 50%;
+padding: 20px;
+margin: auto;
+border: 3px solid black;
+background-color: white;
+
+    
+}
+#bilder {
+height: 250px;
+width: 300px;
+margin: auto;
+
+background-size: cover;
+background-image: url(bo.png);
+}
+input[type="text"], 
+input[type="number"],
+textarea,
+select {
+    display: block; /*elementene havner på egne rader*/
+    margin-top: 2px; /*litt mellomrom til elemtet ovenfor*/
+    margin-bottom: 10px; /*litt mellomrom til elementet nedenfor*/
+    font-family: inherit; /*arver nettsidens skrifttype*/
+    color: #666666; /*mørk grå tekstfarge*/
+    border: 1px solid rgba(0,0,0,0.1); /*lys grå kantlinje*/
+    border-radius: 4px; /*avrundet kantlinje*/
+    padding: 5px;/*luft inni tekstboksene*/
+    box-shadow: 0 1px 5px rgba(0,0,0,0.7); /*skygge på tekstboksene*/
+    box-sizing: border-box; /*teller med kantlinjen i bredden*/
+}
+input[type="text"] {
+    min-width: 130px;
+    width: 100%;
+    
+}
+input [type="number"], select {
+    min-width: 130px;
+    width: 30%;
+}
+textarea {
+    min-width: 130px;
+    width: 100%;
+    height: 60px;
+}
+button {
+    padding: 10px; /*luft inni knappen*/
+    color: white; /* hvit tekstfarge*/
+    text-shadow: 0-1px 1px #335166; /*skygge på teksten*/
+    border: 1px solid rgba(0, 0, 0, 0.1); /*lys grå kantlinje*/
+    border-radius: 4px; /*avrunder kantene*/
+    background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+    background-color: #5588AA; /*bakgrunnsfarge*/
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7); /*skygge bak knappen*/
+    outline: none; /*fjerne ekstra kantlinje*/
+    cursor: pointer; /* gjør om musepekeren til en hånd*/
+    margin-left: 50px;
+    margin-top: 10;
+}
+button:active {
+    transform: translate(1px,1px); /*1px til høyre og 1px ned*/
+}
+button#registrer {
+    background-color: green; /*grønn*/
+}
+button.avbryt {
+    background-color: #CC0000; /*rød*/
+}
